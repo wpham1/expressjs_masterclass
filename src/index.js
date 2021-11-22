@@ -4,8 +4,8 @@ const express = require('express');
 const app = express();
 
 // Separate these out in case we wanna use Docker or something to wrap the app.
-const port = process.env.port || 3000 ;
-const host = '0.0.0.0'
+const PORT = process.env.PORT || 3000 ;
+const HOST = '0.0.0.0'
 
 // Best settings for setting up Express as an API server to receive and process JSON & form data.
 app.use(express.json());
@@ -19,6 +19,6 @@ app.get('/json', (req, res) => {
 })
 
 
-app.listen(port, host, () => {
-  console.log(`Example app listening on port ${port}!`)
+app.listen(PORT, HOST, () => {
+  console.log(`Example app listening on PORT ${PORT}!`)
 });
